@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <nav>
+        <button type="button" id="openMenu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="brand-name">
+            <a href="#">NG-Pokedex</a>
+        </div>
+    </nav>
+
+    <div class="search-input">
+        <input type="search" onkeyup='filterByName()' name="serch_poke" id="search_poke" placeholder="Search">
+    </div>
+    <div id="menubar" class="dispcls">
+        <div class="remove" onclick="sideMenu()">&times;</div>
+        <ul>
+            <li>
+                <a href="#">Pokemon</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+        </ul>
+    </div>
+    <div class="modal dispcls" id="modal-show">
+        <div class="header">
+            <div class="close" id="close">&times;</div>
+            <span id="pokeName">lskamdlmsmlasm</span>
+        </div>
+        <div class="body">
+            <img src="https://img.pokemondb.net/artwork/charizard.jpg" alt="pokemon" id="pokeImg">
+            <div class="content">
+                <div class="row">
+                    <span>Rank</span>
+                    <span id="rank"></span>
+                </div>
+                <div class="row">
+                    <span>Species</span>
+                    <span id="speci"></span>
+                </div>
+                <div class="row">
+                    <span>Height</span>
+                    <span id="hght"></span>
+                </div>
+                <div class="row">
+                    <span>Weight</span>
+                    <span id="weight"></span>
+                </div>
+                <div class="row">
+                    <span>Abilities</span>
+                    <span id="ability"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="cards">
+        <div class="card " id="crd-1">
+            <img src="https://img.pokemondb.net/artwork/bulbasaur.jpg" alt="Bulbasaur" class="img-responsive">
+            <span class="name">Bulbasaur</span>
+            <span class="rank">#01</span>
+        </div>
+
+        <div class="card " id="crd-2">
+            <img src="https://img.pokemondb.net/artwork/ivysaur.jpg" alt="Ivysaur" class="img-responsive">
+            <span class="name">Ivysaur</span>
+            <span class="rank">#02</span>
+        </div>
+
+        <div class="card " id="crd-3">
+            <img alt="venusaur" src="https://img.pokemondb.net/artwork/venusaur.jpg" class="img-responsive">
+            <span class="name">Venusaur</span>
+            <span class="rank">#03</span>
+        </div>
+
+        <div class="card " id="crd-4">
+            <img src="https://img.pokemondb.net/artwork/charmander.jpg" alt="Charmander" class="img-responsive">
+            <span class="name">Charmander</span>
+            <span class="rank">#04</span>
+        </div>
+
+        <div class="card " id="crd-5">
+            <img src="https://img.pokemondb.net/artwork/charmeleon.jpg" alt="Charmeleon" class="img-responsive">
+            <span class="name">Charmeleon</span>
+            <span class="rank">#05</span>
+        </div>
+
+        <div class="card " id="crd-6">
+            <img src="https://img.pokemondb.net/artwork/charizard.jpg" alt="Charizard" class="img-responsive">
+            <span class="name">Charizard</span>
+            <span class="rank">#06</span>
+        </div>
+
+        <div class="card " id="crd-7">
+            <img src="https://img.pokemondb.net/artwork/squirtle.jpg" alt="Squirtle" class="img-responsive">
+            <span class="name">Squirtle</span>
+            <span class="rank">#07</span>
+        </div>
+
+        <div class="card " id="crd-8">
+            <img src="https://img.pokemondb.net/artwork/wartortle.jpg" alt="Wartortle" class="img-responsive">
+            <span class="name">Wartortle</span>
+            <span class="rank">#08</span>
+        </div>
+        <div class="card " id="crd-9">
+            <img src="https://img.pokemondb.net/artwork/blastoise.jpg" alt="Blastoise" class="img-responsive">
+            <span class="name">Blastoise</span>
+            <span class="rank">#09</span>
+        </div>
+        <div class="card " id="crd-10">
+            <img src="https://img.pokemondb.net/artwork/caterpie.jpg" alt="Caterpie" class="img-responsive">
+            <span class="name">Caterpie</span>
+            <span class="rank">#10</span>
+        </div>
+        <div class="card " id="crd-11">
+            <img src="https://img.pokemondb.net/artwork/metapod.jpg" alt="Metapod" class="img-responsive">
+            <span class="name">Metapod</span>
+            <span class="rank">#11</span>
+        </div>
+        <div class="card " id="crd-12">
+            <img src="https://img.pokemondb.net/artwork/butterfree.jpg" alt="Butterfree" class="img-responsive">
+            <span class="name">Butterfree</span>
+            <span class="rank">#12</span>
+        </div>
+        <div class="card " id="crd-13">
+            <img src="https://img.pokemondb.net/artwork/weedle.jpg" alt="Weedle" class="img-responsive">
+            <span class="name">Weedle</span>
+            <span class="rank">#13</span>
+        </div>
+        <div class="card " id="crd-14">
+            <img src="https://img.pokemondb.net/artwork/kakuna.jpg" alt="Kakuna" class="img-responsive">
+            <span class="name">Kakuna</span>
+            <span class="rank">#14</span>
+        </div>
+        <div class="card " id="crd-15">
+            <img src="https://img.pokemondb.net/artwork/beedrill.jpg" alt="Beedrill" class="img-responsive">
+            <span class="name">Beedrill</span>
+            <span class="rank">#15</span>
+        </div>
+        <div class="card " id="crd-16">
+            <img src="https://img.pokemondb.net/artwork/pidgey.jpg" alt="Pidgey" class="img-responsive">
+            <span class="name">Pidgey</span>
+            <span class="rank">#16</span>
+        </div>
+        <div class="card " id="crd-17">
+            <img src="https://img.pokemondb.net/artwork/pidgeotto.jpg" alt="Pidgeotto" class="img-responsive">
+            <span class="name">Pidgeotto</span>
+            <span class="rank">#17</span>
+        </div>
+        <div class="card " id="crd-18">
+            <img src="https://img.pokemondb.net/artwork/pidgeot.jpg" alt="Pidgeot" class="img-responsive">
+            <span class="name">Pidgeot</span>
+            <span class="rank">#18</span>
+        </div>
+
+    </div>
+
+
+    <script src="pokebox2.js"></script>
+</body>
+
+</html>
